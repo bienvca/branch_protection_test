@@ -17,6 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Block Merge Commits
-        uses: Morishiri/block-merge-commits-action@v2
+        uses: Morishiri/block-merge-commits-action@v1.0.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}          
