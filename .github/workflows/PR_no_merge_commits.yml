@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: PR Check: No Merge Commits
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  message-check:
+    name: Block Merge Commits
+    runs-on: ubuntu-latest
+    steps:
+      - name: Block Merge Commits
+        uses: Morishiri/block-merge-commits-action@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}          
